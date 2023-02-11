@@ -178,7 +178,7 @@ ul{
     display:none!important; 
 }
 
-.pddd-15
+.padd-15
 {
     padding-left: 15px;
     padding-right: 15px;
@@ -321,7 +321,7 @@ h3.my-profession{
 .section-title h2::after{
     content: '';
     height: 4px;
-    width: 25px;px ;
+    width: 25px ;
     background-color:var(--skin-color) ;
     position: absolute;
     top: 100%;
@@ -349,6 +349,7 @@ h3.my-profession{
 }
 .about .about-content .about-text p{
     font: size 16px;
+    font-weight: 900;
     line-height: 25px;
     color: var(--text-black-700);
 }
@@ -376,9 +377,82 @@ h3.my-profession{
     margin-left: 4px;
     display: inline-block;
 }
-.about .about-content .skills {
-    flex: 0 0 40%;
-    max-width: 40%;
+.about .about-content .personal-info .button{
+    margin-top: 30px;
+}
+.about .about-content .personal-info .button .btn{
+    margin-right:15px;
+    margin-top: 10px;
+}
+.about .about-content  .skills{
     margin-top: 40px;
-    padding-left: 20px;
+    max-width: 40%;
+    flex: 0 0 50%;
+}
+
+.about .about-content .skills .skill-items{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.about .about-content .skills .skill-items h5{
+    line-height: 40px;
+    font-weight: 600 ;
+    font-size: 16px;
+    color: var(--text-black-900);
+    text-transform: capitalize;
+}
+.about .about-content .skills .skill-items .progress{
+    background-color:var(--bg-black-50) ;
+    height: 7px;
+    border-radius: 4px;
+    width: 100%;
+    position: relative;
+}
+.about .about-content .skills .skill-items{
+    margin-bottom: 25px ;
+}
+.about .about-content .skills .skill-items .progress .progress-in{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 4px;
+    background-color: var(--skin-color);
+
+}
+.about .about-content .skills .skill-items .skill-percent{
+    position: absolute;
+    right: 0;
+    color: var(--bg-black-900);
+    top: -40px;
+    font-weight: 400;
+    line-height: 40px;
+}
+.about .about-content .education,
+.about .about-content .experience
+{
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-top: 30px;
+   
+}
+
+.about .about-content .title{
+     font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--tet-black-900);
+}
+.about .about-content .timeline-box {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.about .about-content  .timeline{
+    background-color: var(--bg-black-100);
+    padding: 30px 15px;
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    width: 100%;
+    position: relative;
 }
