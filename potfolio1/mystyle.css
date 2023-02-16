@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg-color: #c7c4de;
+    --bg-color-00:rgb(51, 8, 29);
+
+}
+.main-container{
+    width: 1200px;
+    height: 2000px;
+    padding: 0,50px;
+    background-color:var(--bg-color);
+    margin-left: 150px;
+}
+.logo{
+    font-size: 70px;
+
+}
+span{
+    color: rgb(154, 90, 129);
+}
+.nav{
+    height: 200px;
+    width: 1000px;
+    background-color: rgb(51, 8, 29);
+    
+}
+ul{
+    font-size: 30px;
+
+}
+.update{
+    height: 200px;
+    width: 1000px;
+    background-color: rgb(154, 90, 129);
+}
+.aboutme{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(232, 241, 71);
+    text-align: justify;
+    margin-left: 1000px;
+    
+}
