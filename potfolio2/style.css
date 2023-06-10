@@ -196,6 +196,9 @@ ul{
     margin-right: -15px;
     position:relative;
 }
+.shadow-dark{
+    box-shadow: -20px 19px 20px 0px rgba(29, 28, 48, 0.288);
+}
 .btn{
     font-size: 16px;
     font-weight: 500;
@@ -205,11 +208,15 @@ ul{
     border-radius: 40px;
     border: none;
     white-space: nowrap;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     display: inline-block;
 }
 .btn:hover{
     transform: scale(1.05);
+    background: transparent;
+    font-size: 0.7rem;
+    color: bisque;
+    border: 1px solid var(--skin-color);
 }
 .aside .nav li a:hover{
     
@@ -301,9 +308,9 @@ h3.my-profession{
     margin-bottom: 60px;
 }
 .section-title h2{
-    font-size: 40px;
+    font-size: 30px;
     color: var(--tet-black-900);
-    font-weight: 700;
+    font-weight: 400;
     position: relative;
 }
 
@@ -338,7 +345,7 @@ h3.my-profession{
     max-width: 100%;
 }
 .about .about-content .about-text h3{
-    font: size 24px;
+    font-size: 24px;
     margin-bottom: 15px;
     font-weight: 700;
     color: var(--text-black-900);
@@ -348,7 +355,7 @@ h3.my-profession{
     color: var(--skin-color);
 }
 .about .about-content .about-text p{
-    font: size 16px;
+    font-size: 16px;
     font-weight: 900;
     line-height: 25px;
     color: var(--text-black-700);
@@ -421,12 +428,13 @@ h3.my-profession{
     background-color: var(--skin-color);
 
 }
-.about .about-content .skills .skill-items .skill-percent{
+.about .about-content .skills .skill-items .progress .skill-percent{
     position: absolute;
     right: 0;
-    color: var(--bg-black-900);
+    color: var(--text-black-900);
     top: -40px;
-    font-weight: 400;
+    font-weight: 700;
+    font-size: 1rem;
     line-height: 40px;
 }
 .about .about-content .education,
@@ -456,3 +464,172 @@ h3.my-profession{
     width: 100%;
     position: relative;
 }
+
+.about .about-content .timeline .timeline-items{
+    position: relative;
+    padding-left: 37px;
+    padding-bottom: 50px;
+}
+
+.about .about-content .timeline .timeline-items:last-child{
+    padding-bottom: 0;
+}
+
+.about .about-content .timeline .timeline-items::before{
+    content: "";
+    position: absolute;
+    height:100%;
+    left: 7px;
+    top: 0;
+    background-color: var(--skin-color);
+}
+
+.about .about-content  .timeline .circle-dot{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: var(--skin-color);
+}
+
+
+.about .about-content .timeline .timeline-date{
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 17px;
+    color: var(--text-black-700);
+}
+
+.about .about-content .timeline .timeline-date .fa{
+    margin-right: 5px;
+}
+
+.about .about-content .timeline .timeline-title{
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    color: 
+    
+    var(--text-black-900);
+}
+
+.about .about-content .timeline .timeline-text{
+    line-height: 25px;
+    font-size: 16px;
+    text-align: justify;
+    color: var(--text-black-700);
+}
+
+/* services */
+.service .service-item{
+    margin-bottom: 30px; 
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+
+.service .service-item .service-item-inner{
+    background: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+.service .service-item .service-item-inner:hover{
+    box-shadow: -20px 19px 20px 0px rgba(29, 28, 48, 0.288);
+}
+
+.service .service-item .service-item-inner .icon{
+    height: 60px;
+    width: 60px;
+    border-radius:50%;
+    display: block;
+    margin: 0 auto 30px;
+    text-align: center;
+    background: transparent;
+    border: 1px solid var(--skin-color);
+}
+.service .service-item .service-item-inner .icon .fa{
+    font-size: 25px;
+    line-height: 60px;
+    color: var(--skin-color);
+}
+
+.service .service-item .service-item-inner:hover .icon{
+    background: var(--skin-color);
+    transition: all 1s ease;
+    box-shadow: 0 0 20px var(--skin-color);
+
+}
+
+.service .service-item .service-item-inner:hover .icon .fa{
+      font-size: 29px;
+    color: var(--bg-black-900);
+    transition: all 1s ease;
+}
+
+.service .service-item .service-item-innerh4{
+    font-size: 18px;
+    margin-bottom:15px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    text-transform: capitalize; 
+}
+
+.service .service-item .service-item-inner p{
+    font-size: 16px;
+    color: var(--text-black-700);
+    line-height: 25px;
+}
+
+/* PORTFOLIO */
+ 
+.portfolio .portfolio-heading{
+    flex:0 0 100%;
+    max-width: 100%; 
+    margin-bottom: 40px;
+    margin-top: -5rem;
+}
+
+.portfolio .portfolio-heading h2{
+    font-weight: 500;
+    color: var(--tet-black-900);
+    font-size:1.3rem;
+    text-transform: capitalize;
+}
+
+.portfolio .portfolio-items{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    margin-bottom: 30px;
+}
+
+.portfolio .portfolio-items-inner{
+    border: 6px solid var(--bg-black-100);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio .portfolio-items-inner .portfolio-image img{
+    width: 100%;
+    display: block;
+}
+
+/* contact */
+
+  .contact-title{
+    color: var(--skin-color);
+    text-align: center;
+    font-size:25px ;
+    margin-bottom: 20px;
+}
+.contact-sub-title{
+    color: var(--text-black-900);
+    text-align: center;
+    font-size:15px ;
+    margin-bottom: 0px;
+}   
