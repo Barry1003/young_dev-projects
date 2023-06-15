@@ -18,12 +18,24 @@ body {
     font-family: 'poppins', sans-serif;
 }
 
+.dark{
+    --bg-black-900:#151515;
+    --bg-black-100:#222222;
+    --bg-black-50:#393939;
+    --text-black-900:#ffff;
+    --text-black-700:#e9e9e9;
+
+    --box-shadow: -20px 19px 20px 0px rgba(109, 109, 109, 0.288);
+
+}
+
 *{
     margin: 0;
     padding: 0;
     outline:none;
     text-decoration: none;
     box-sizing: border-box;
+    scroll-behavior:smooth;
 }
 
 ::before, ::after {
@@ -52,13 +64,15 @@ ul{
 }
 
 
-.aside .logo{
+.logo{
     position: absolute;
     top: 50px;
+    left: 0.5rem;
     font-size: 30px;
     text-transform: capitalize;
+    z-index: 101;
 }
-.aside .logo a {
+.logo a {
       color: var(--tet-black-900);
       font-weight: 700;
       padding: 15px 20px;
@@ -67,12 +81,12 @@ ul{
       position: relative;
     }
 
-    .aside .logo a span {
+    .logo a span {
         font-family: 'clicker script', cursive;
         font-size: 40px;
     }
 
-    .aside .logo a::before{
+    .logo a::before{
         content: '';
         position: absolute;
         width: 20px;
@@ -83,7 +97,7 @@ ul{
         left: 0;
 
     }
-    .aside .logo a::after{
+    .logo a::after{
         content: '';
         position: absolute;
         width: 20px;
@@ -102,13 +116,14 @@ ul{
 .aside .nav li {
     margin-bottom: 20px;
     display: block;
+    
 }
 
 .aside .nav li a {
     font-size: 16px;
     font-weight: 600;
     display: block;
-    color: var(--tet-black-900);
+    color: var(--text-black-900);
     padding: 5px 15px;
     border-bottom:1px solid var(--bg-black-50) ;
     transition: all 0.3s ease;
@@ -120,7 +135,7 @@ ul{
 .aside .nav li a i {
     margin-right: 15px;
 }
-.aside .nav-toggler{
+/* .aside .nav-toggler{
     height: 40px;
     width: 45px;
     border: 1px solid var(--bg-black-50);
@@ -162,15 +177,26 @@ ul{
     top: 6px;
     left: 0;
 }
-
+ */
+ /* ================NEW NAV TOGLLER============== */
 /* home */
 .section{
     background: var(--bg-black-900);
     min-height: 100vh;
     display: block;
     padding:0 30px ;
-     opacity: 1;
+    opacity: 1;
+    left:0;
+    right: bottom;
+    z-index: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
 
+
+}
+.section.active{
+    z-index:hidden;
+    opacity: 1; 
 }
 
 .main-content{
@@ -276,6 +302,7 @@ h3.my-profession{
 
     color:var(--text-black-700) ;
 }
+
 .home .home-img::after{
     content:'';
     position: absolute;
@@ -293,7 +320,7 @@ h3.my-profession{
     height: 80px;
     width: 80px;
     left: 10px;
-    top:  -20px;
+    top:  -18px;
     border-top: 10px solid var(--skin-color);
     border-left: 10px solid var(--skin-color);
 }
@@ -311,7 +338,7 @@ h3.my-profession{
 }
 .section-title h2{
     font-size: 30px;
-    color: var(--tet-black-900);
+    color: var(--text-black-900);
     font-weight: 400;
     position: relative;
 }
@@ -325,6 +352,9 @@ h3.my-profession{
     top: 100%;
     left: 0;
 
+}
+h3{
+    color:  var(--text-black-900);
 }
 
 .section-title h2::after{
@@ -598,7 +628,7 @@ h3.my-profession{
 
 .portfolio .portfolio-heading h2{
     font-weight: 500;
-    color: var(--tet-black-900);
+    color: var(--text-black-900);
     font-size:1.3rem;
     text-transform: capitalize;
 }
@@ -709,15 +739,74 @@ h3.my-profession{
     height: 50px;
     padding: 0 50px;
  }
+#open_menu-btn,
+#close_menu-btn
+{
+    transition: all 0.5s ease;
+    display:none;
+}
 
+#close_menu-btn{
+    transform: rotate(180deg);
+}
 @media screen and (max-width:1024px){
     .aside{
-        left: -270px;
+        width: 14rem ;
+        display: none;
+        animation: asideItem 400ms linear forwards;
+    }
+
+    @keyframes asideItem{
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(-10%);
+        }
+    }
+
+    #open_menu-btn{
+        display: flex;
+    }
+
+    .aside .nav li {
+        margin-bottom: 20px;
+        display: block;
+        animation: navItem 400ms linear forwards;
+        transform-origin: left right; 
+        transition: all 0.5s ease;
+    }
+    
+    @keyframes navItem {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(15%);
+        }
+    }
+     .aside .nav li:nth-child(2){
+        animation-delay: 600ms;
+    }
+     .aside .nav li:nth-child(3){
+        animation-delay: 800ms;
+    }
+     .aside .nav li:nth-child(4){
+        animation-delay: 1000ms;
+    }
+    .aside .nav li:nth-child(5){
+        animation-delay: 1200ms;
+    }
+    
+    .logo{
+        left: 35%;
+        top: 25px;
+        margin-bottom: 2rem;
     }
     .main-content{
         padding-left: 0 ;
     }
-    .about. .about-content .personal-info .info-item p span{
+    .about .about-content .personal-info .info-item p span{
         display:block;
         margin-left: 0 ;
     }
@@ -741,5 +830,22 @@ h3.my-profession{
 }
 
 @media(max-width:761px){
-    
+    .contact .contact-form .col-6,
+    .contact .contact-info-item,
+    .portfolio .portfolio-items,
+    .service .service-item,
+    .about .about-content  .education,
+    .about .about-content  .experience,
+    .about .about-content .skills,
+    .about .about-content .personal-info{
+        flex : 0 0 100%;
+        max-width: 100%;
+    } 
+
+    .logo{
+        left: 30%; 
+}
+
+
+
 }
